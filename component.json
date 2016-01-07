@@ -1,0 +1,11 @@
+{
+  "name": "test3",
+  "version": "0.0.0",
+  "dependencies": {
+    "yyx990803/vue": "*"
+  },
+  "main": "src/main.js",
+  "scripts": [
+    "src/main.js"
+  ]
+}
