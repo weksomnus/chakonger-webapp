@@ -1,7 +1,9 @@
 <template>
   <div id="loginWin">
     <p>{{ text | lowercase}}</p>
+    <span>用户名</span>
     <input v-model="userName">
+    <span>密码</span>
     <input v-model="passWord">
     <button @click="login">登录</button>
   </div>
