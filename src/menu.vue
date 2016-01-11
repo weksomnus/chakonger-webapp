@@ -5,8 +5,8 @@
       <dropdown>
         <span class="glyphicon glyphicon-align-justify navbar-brand collapsed" aria-hidden="true" data-toggle="dropdown"></span>
         <ul class="dropdown-menu" role="menu">
-          <li><a v-link="{ path: '/login' }">LOGIN</a></li>
-          <li><a v-link="{ path: '/devicelist' }">DEVICELIST</a></li>
+          <li><a v-link="{ path: '/login' }">登录</a></li>
+          <li><a v-link="{ path: '/devicelist' }">设备列表</a></li>
           <li><a href="#">Something else here</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="#">Separated link</a></li>

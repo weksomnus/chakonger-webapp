@@ -8,7 +8,6 @@
     <input v-model="passWord"  class="col-xs-12">
     <br><br>
     <button @click="login" class="col-xs-3">登录</button>
-    <button @click="teststore" class="col-xs-3">test</button>
   </div>
 </template>
 
@@ -50,9 +49,6 @@
             }
         }, function (response) {
         });
-      },
-      teststore:function(event){
-        store.actions.savesessionid;
       }
     }
   }

@@ -1,10 +1,6 @@
 <template>
-  <div id="deviceList">
-  <ul>
-    <li v-for="device in devices">
-      {{ device.devName }}
-    </li>
-  </ul>
+  <div id="deviceList" class="list-group">
+      <a v-for="device in devices"  v-link="{ path: '/mainview/'+ device.devID}" class="list-group-item">{{ device.devName }}</a>
     <span>{{logined}}</span>
   </div>
 </template>
@@ -29,7 +25,6 @@
       if (response.data.errcode==0){
         //登录成功
         this.devices=response.data.device;
-
       }else {
         //登陆失败
         alert('ErrMsg:' + response.data.errmsg + '!');
