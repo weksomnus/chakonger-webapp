@@ -1,5 +1,5 @@
 {
-  "name": "test3",
+  "name": "ChakongerWebApp",
   "version": "0.0.0",
   "dependencies": {
     "yyx990803/vue": "*"

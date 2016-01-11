@@ -8,15 +8,10 @@
     <input v-model="passWord"  class="col-xs-12">
     <br><br>
     <button @click="login" class="col-xs-3">登录</button>
-    <button @click="teststore" class="col-xs-3">test</button>
   </div>
 </template>
 
 <script>
-  import store from "./store.js"
-  const {
-    savesessionid
-    } = store.actions;
   export default {
     replace: false,
   	data() {
@@ -42,17 +37,13 @@
         resource.save(null,{userName: this.userName,passWord: hash}).then(function (response) {
             if (response.data.errcode==0){
               //登录成功
-              alert('Session ' + response.data.sessionID + '!');
-              router.go({ path: '/devicelist' });
+              alert('Session ' + response.data.sessionID + '!')
             }else {
               //登陆失败
               alert('ErrMsg:' + response.data.errmsg + '!')
             }
         }, function (response) {
         });
-      },
-      teststore:function(event){
-        store.actions.savesessionid;
       }
     }
   }
