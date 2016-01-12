@@ -1,6 +1,6 @@
 <template>
   <div id="loginWin">
-    <br><br>
+    <br><br><br><br><br><br>
     <p>用户名</p>
     <input v-model="userName" class="col-xs-12 ">
     <br><br>
@@ -8,20 +8,23 @@
     <input v-model="passWord"  class="col-xs-12">
     <br><br>
     <button @click="login" class="col-xs-3">登录</button>
+    <button v-show="ifshow" @click="logout" class="col-xs-3">SetLogged</button>
+    <span v-show="ifshow">Logined</span>
   </div>
 </template>
 
 <script>
   import store from "./store.js"
-  const {
-    savesessionid
-    } = store.actions;
   export default {
     replace: false,
+    computed:{
+      ifshow(){return store.state.sid=='abc'?true:false}
+    },
   	data() {
       return {
         passWord: '',
         userName:''
+
       }
     },
     methods: {
@@ -49,6 +52,9 @@
             }
         }, function (response) {
         });
+      },
+      logout:function(event){
+        store.actions.logout();
       }
     }
   }

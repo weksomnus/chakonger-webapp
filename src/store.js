@@ -6,31 +6,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-// mutation types
-// optional if you don't like constants.
-const SAVESESSIONID = 'SAVESESSIONID';
-const GETSESSIONID = 'GETSESSIONID';
-
 // root state object.
 // each Vuex instance is just a single state tree.
 const state = {
-  SessionID:""
+  sid:"abc"
 };
-
-const actions = {
-    savesessionid: SAVESESSIONID,
-    getsessionid: GETSESSIONID
-}
+const logout = 'LOGOUT'
 
 const mutations = {
-  [SAVESESSIONID] (state) {
-    state.SessionID="LOGINED";
-  },
-  [GETSESSIONID] (state) {
-
+  [logout] (state) {
+    state.sid='bbc';
+    alert('testlogout')
   }
 }
+const actions = {
 
+  // for simple actions that just dispatches a single mutation,
+  // we can just provide the mutation type.
+  logout: logout
+}
 // A Vuex instance is created by combining the state, the actions,
 // and the mutations. Because the actions and mutations are just
 // functions that do not depend on the instance itself, they can

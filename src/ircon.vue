@@ -1,19 +1,10 @@
 <template>
   <div id="devMainview">
-      <dropdown>
-        <span data-toggle="dropdown">DROPDOWN</span>
-        <ul class="dropdown-menu" role="menu">
-          <li v-for="device in devices.unitedevice">{{device.infraTypeID}}</li>
-        </ul>
-      </dropdown>
-    <div id="deviceList" class="list-group">
-      <a v-for="device in devices.unitedevice" class="list-group-item">{{device.devType}} {{device.infraTypeID}}</a>
-      </div>
+    {{devices | json}}
   </div>
 </template>
 
-<script>a
-  import { dropdown } from 'vue-strap'
+<script>
   export default {
     replace: false,
   	data() {
@@ -28,7 +19,6 @@
         if (response.data.errcode==0){
           //成功
           this.devices=response.data;
-          console.log(this.devices);
         }else {
           //登陆失败
           alert('ErrMsg:' + response.data.errmsg + '!');
@@ -37,9 +27,6 @@
       });
     },
     methods: {
-    },
-    components: {
-      'dropdown':dropdown
     }
   }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="deviceList" class="list-group">
-      <a v-for="device in devices"  v-link="{ path: '/mainview/'+ device.devID}" class="list-group-item">{{ device.devName }}</a>
-    <span>{{logined}}</span>
+      <a v-for="device in devices"  v-link="{ path: '/mainview/'+ device.devID}" class="list-group-item">【{{device.devStatus}}】{{ device.devName }}</a>
+    <span>{{testb}}</span>
   </div>
 </template>
 
@@ -15,8 +15,8 @@
       }
     },
     computed:{
-      logined(){
-        return store.state.sessionID;
+      testb(){
+        return store.state.sid;
       }
     },
     created:function() {
@@ -35,5 +35,6 @@
     methods: {
 
     }
+
   }
 </script>
